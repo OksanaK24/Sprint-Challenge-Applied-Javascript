@@ -13,13 +13,27 @@
 
 let topicsL = document.querySelector(".topics");
 
+let allTab = document.createElement("div");
+  allTab.classList.add("tab");
+  allTab.textContent = "ALL";
+  topicsL.appendChild(allTab);
+  allTab.addEventListener("click", () =>{
+    allTab.classList.add("active-tab")
+  })
+  allTab.addEventListener("mouseout", () =>{
+    allTab.classList.remove("active-tab")
+  });
+
 function topicsList(arr){
     let tab = document.createElement("div");
     tab.classList.add("tab");
     tab.textContent = arr;
-    // tab.addEventListener("click", () =>{
-    //     tab.classList.add("active-tab")
-    // })
+    tab.addEventListener("click", () =>{
+      tab.classList.add("active-tab")
+    })
+    tab.addEventListener("mouseout", () =>{
+      tab.classList.remove("active-tab")
+    });
     
     return tab;
 }
@@ -29,7 +43,10 @@ axios.get("https://lambda-times-backend.herokuapp.com/topics")
     response.data.topics.forEach(item =>{
     topicsL.appendChild(topicsList(item))
     })
+    
   })
   .catch( error => {
     console.log("It's definitely not topic")
   })
+
+  console.log(topicsL);
