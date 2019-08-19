@@ -8,8 +8,8 @@
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
 
-let LambdaTopic = axios.get("https://lambda-times-backend.herokuapp.com/topics")
-console.log(LambdaTopic);
+// let LambdaTopic = axios.get("https://lambda-times-backend.herokuapp.com/topics")
+// console.log(LambdaTopic);
 
 let topicsL = document.querySelector(".topics");
 
