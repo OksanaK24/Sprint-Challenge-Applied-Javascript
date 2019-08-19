@@ -17,6 +17,9 @@ function topicsList(arr){
     let tab = document.createElement("div");
     tab.classList.add("tab");
     tab.textContent = arr;
+    // tab.addEventListener("click", () =>{
+    //     tab.classList.add("active-tab")
+    // })
     
     return tab;
 }
