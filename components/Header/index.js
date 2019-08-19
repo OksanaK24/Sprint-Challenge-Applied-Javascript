@@ -17,7 +17,7 @@ function Header() {
 
     let spanDate = document.createElement("span");
     spanDate.classList.add("date");
-    spanDate.textContent = "SMARCH 28, 2019";
+    spanDate.textContent = "MARCH 28, 2019";
     divHeader.appendChild(spanDate);
 
     let head1 = document.createElement("h1");
