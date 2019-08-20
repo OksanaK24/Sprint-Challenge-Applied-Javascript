@@ -8,10 +8,12 @@
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
 
-// let LambdaTopic = axios.get("https://lambda-times-backend.herokuapp.com/topics")
-// console.log(LambdaTopic);
+let LambdaTopic = axios.get("https://lambda-times-backend.herokuapp.com/topics")
+console.log(LambdaTopic);
 
 let topicsL = document.querySelector(".topics");
+
+let ButtonArray = [];
 
 let allTab = document.createElement("div");
   allTab.classList.add("tab");
@@ -23,6 +25,7 @@ let allTab = document.createElement("div");
   allTab.addEventListener("mouseout", () =>{
     allTab.classList.remove("active-tab")
   });
+ButtonArray.push(allTab);
 
 function topicsList(arr){
     let tab = document.createElement("div");
@@ -42,11 +45,14 @@ axios.get("https://lambda-times-backend.herokuapp.com/topics")
   .then( (response) => {
     response.data.topics.forEach(item =>{
     topicsL.appendChild(topicsList(item))
+    ButtonArray.push(topicsList(item));
+       
     })
-    
-  })
+      })
   .catch( error => {
     console.log("It's definitely not topic")
   })
 
-  console.log(topicsL);
+
+  console.log(ButtonArray)
+

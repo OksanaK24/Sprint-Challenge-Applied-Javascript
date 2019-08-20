@@ -54,32 +54,43 @@ function CardCreator(arr){
 }
 
 
-let Button = document.querySelectorAll(".tab");
-console.log(Button);
+
+let Button = document.getElementsByClassName("tab");
+console.log(Button)
 Button[0].addEventListener("click", () => {
     axios.get("https://lambda-times-backend.herokuapp.com/articles")
     .then((response) =>{
         response.data.articles.bootstrap.forEach(item =>{
            cardContainer.appendChild(CardCreator(item))
+
         })
-    // })
-    // .then((response) =>{
+ 
         response.data.articles.javascript.forEach(item =>{
             cardContainer.appendChild(CardCreator(item))
         })
-    // })
-    // .then((response) =>{
+  
         response.data.articles.jquery.forEach(item =>{
             cardContainer.appendChild(CardCreator(item))
         })
-    // })
-    // .then((response) =>{
+ 
         response.data.articles.node.forEach(item =>{
             cardContainer.appendChild(CardCreator(item))
         })
-    // })
-    // .then((response) =>{
+    
         response.data.articles.technology.forEach(item =>{
+            cardContainer.appendChild(CardCreator(item))
+        })
+    })
+    .catch( error => {
+        console.log("Sorry, it didn't work")
+    })
+})
+
+Button[1].addEventListener("click", () => {
+    axios.get("https://lambda-times-backend.herokuapp.com/articles")
+    .then((response) =>{
+        
+        response.data.articles.javascript.forEach(item =>{
             cardContainer.appendChild(CardCreator(item))
         })
     })
