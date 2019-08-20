@@ -30,13 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+DOM – Document Object Model. With DOM you can change your web page – you can change styling, content, and functionality. It’s possible to change all of it directly in browser without modifying the main code.
+
 2. What is an event?
+
+Event is different actions that user does with the page. It could mouse actions (clicking, moving mouse over some text, etc), keyboard actions (scrolling, pushing some keys etc) and others ( changing window’s size) 
 
 3. What is an event listener?
 
+Event listener it’s a function that can be activating and happening when some event happens (for example “click”) over some object (for example “button”). For example, if you click this button, it will change its size and color. 
+
 4. Why would we convert a NodeList into an Array?
 
+NodeList is just array-like object and doesn’t have a lot of features that regular array has. So if we want to be able to use all of those methods we have to convert NodeList into regular array.
+
 5. What is a component?
+
+Components – are reusable parts of your code. It could be buttons with the same styling, links etc.  In JS we also  can create some function with all styling for  button (for example) and then we can just create new button and call that function. 
 
 ### Git Set up
 
